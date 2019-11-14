@@ -98,6 +98,12 @@ class CamelCase(ABC):
         """
         pass
 
+    def __set_name__(self, owner, name):
+        pass
+
+    def __init_subclass__(cls, **kwargs):
+        pass
+
     def __init__(self, param1, param2, param3):
         self.attr1 = param1
         self.attr2 = param2
@@ -123,7 +129,26 @@ class CamelCase(ABC):
     def name(self, value):
         pass
 
+    def __copy__(self):
+        pass
+
+    def __deepcopy__(self, memodict={}):
+        pass
+
     def __del__(self):
+        pass
+
+    # Reflection
+    def __mro_entries__(self, bases):
+        pass
+
+    def __prepare__(mcs, name, bases):
+        pass
+
+    def __instancecheck__(self, instance):
+        pass
+
+    def __subclasscheck__(self, subclass):
         pass
 
     # Descriptor Object
@@ -146,6 +171,9 @@ class CamelCase(ABC):
     def __getstate__(self):
         pass
 
+    def __setstate__(self, state):
+        pass
+
     def __reduce__(self):
         pass
 
@@ -165,6 +193,16 @@ class CamelCase(ABC):
     def __getattribute__(self, item):
         pass
 
+    # Container Methods
+    def __class_getitem__(cls, item):
+        pass
+
+    def __len__(self):
+        pass
+
+    def __length_hint__(self):
+        pass
+
     def __getitem__(self, item):
         pass
 
@@ -172,6 +210,82 @@ class CamelCase(ABC):
         pass
 
     def __delitem__(self, key):
+        pass
+
+    def __getslice__(self, i, j):  # Not a magic method in Python 3
+        pass
+
+    def __setslice__(self, i, j, sequence):  # Not a magic method in Python 3
+        pass
+
+    def __delslice__(self, i, j):  # Not a magic method in Python 3
+        pass
+
+    def __iter__(self):
+        pass
+
+    def __reversed__(self):
+        pass
+
+    def __next__(self):
+        pass
+
+    def __contains__(self, item):
+        pass
+
+    def __missing__(self, key):
+        pass
+
+    # Callable
+    def __call__(self, *args, **kwargs):
+        pass
+
+    # Context Managers
+    def __enter__(self):
+        pass
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        pass
+
+    # Coroutines
+    def __aenter__(self):
+        pass
+
+    def __aexit__(self, exc_type, exc_val, exc_tb):
+        pass
+
+    def __aiter__(self):
+        pass
+
+    def __anext__(self):
+        pass
+
+    def __await__(self):
+        pass
+
+    # Representation
+    def __repr__(self):
+        pass
+
+    def __bytes__(self):
+        pass
+
+    def __unicode__(self):
+        pass
+
+    def __format__(self, format_spec):
+        pass
+
+    def __hash__(self):
+        pass
+
+    def __fspath__(self):
+        pass
+
+    def __dir__(self) -> Iterable[str]:
+        pass
+
+    def __sizeof__(self):
         pass
 
     # Type Conversion
@@ -196,9 +310,6 @@ class CamelCase(ABC):
     def __index__(self):
         pass
 
-    def __trunc__(self):
-        pass
-
     def __str__(self):
         pass
 
@@ -208,38 +319,185 @@ class CamelCase(ABC):
     def __coerce__(self, other):
         return self, other
 
-    # Representation
-    def __repr__(self):
+    # Comparison
+    def __cmp__(self, other):
         pass
 
-    def __unicode__(self):
+    def __eq__(self, other):
         pass
 
-    def __format__(self, format_spec):
+    def __ne__(self, other):
         pass
 
-    def __hash__(self):
+    def __lt__(self, other):
         pass
 
-    def __dir__(self) -> Iterable[str]:
+    def __gt__(self, other):
         pass
 
-    def __sizeof__(self):
+    def __le__(self, other):
         pass
 
-    # Context Managers
-    def __enter__(self):
+    def __ge__(self, other):
         pass
 
-    def __exit__(self, exc_type, exc_val, exc_tb):
+    # Numeric
+    def __pos__(self):
         pass
 
+    def __neg__(self):
+        pass
 
+    def __abs__(self):
+        pass
 
+    def __invert__(self):
+        pass
 
+    def __round__(self, n=None):
+        pass
 
+    def __floor__(self):
+        pass
 
+    def __ceil__(self):
+        pass
 
+    def __trunc__(self):
+        pass
+
+    # Arithmetic
+    def __add__(self, other):
+        pass
+
+    def __radd__(self, other):
+        pass
+
+    def __iadd__(self, other):
+        pass
+
+    def __sub__(self, other):
+        pass
+
+    def __rsub__(self, other):
+        pass
+
+    def __isub__(self, other):
+        pass
+
+    def __mul__(self, other):
+        pass
+
+    def __rmul__(self, other):
+        pass
+
+    def __imul__(self, other):
+        pass
+
+    def __matmul__(self, other):
+        pass
+
+    def __rmatmul__(self, other):
+        pass
+
+    def __imatmul__(self, other):
+        pass
+
+    def __floordiv__(self, other):
+        pass
+
+    def __rfloordiv__(self, other):
+        pass
+
+    def __ifloordiv__(self, other):
+        pass
+
+    def __div__(self, other):  # Not a magic method in Python 3
+        pass
+
+    def __rdiv__(self, other):  # Not a magic method in Python 3
+        pass
+
+    def __idiv__(self, other):  # Not a magic method in Python 3
+        pass
+
+    def __truediv__(self, other):
+        pass
+
+    def __rtruediv__(self, other):
+        pass
+
+    def __itruediv__(self, other):
+        pass
+
+    def __mod__(self, other):
+        pass
+
+    def __rmod__(self, other):
+        pass
+
+    def __imod__(self, other):
+        pass
+
+    def __divmod__(self, other):
+        pass
+
+    def __rdivmod__(self, other):
+        pass
+
+    def __pow__(self, power, modulo=None):
+        pass
+
+    def __rpow__(self, other):
+        pass
+
+    def __ipow__(self, other):
+        pass
+
+    def __lshift__(self, other):
+        pass
+
+    def __rlshift__(self, other):
+        pass
+
+    def __ilshift__(self, other):
+        pass
+
+    def __rshift__(self, other):
+        pass
+
+    def __rrshift__(self, other):
+        pass
+
+    def __irshift__(self, other):
+        pass
+
+    def __and__(self, other):
+        pass
+
+    def __rand__(self, other):
+        pass
+
+    def __iand__(self, other):
+        pass
+
+    def __or__(self, other):
+        pass
+
+    def __ror__(self, other):
+        pass
+
+    def __ior__(self, other):
+        pass
+
+    def __xor__(self, other):
+        pass
+
+    def __rxor__(self, other):
+        pass
+
+    def __ixor__(self, other):
+        pass
 
 
 # Functions #
